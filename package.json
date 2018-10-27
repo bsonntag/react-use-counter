@@ -2,10 +2,15 @@
   "name": "react-use-counter",
   "version": "0.0.0-alpha.0",
   "description": "React hook for counter state.",
-  "repository": "git@github.com:bsonntag/react-use-counter.git",
+  "keywords": [
+    "counter",
+    "hooks",
+    "react"
+  ],
   "license": "MIT",
   "author": "Benjamim Sonntag <benjamimsonntag@gmail.com>",
   "main": "dist/index.js",
+  "repository": "git@github.com:bsonntag/react-use-counter.git",
   "scripts": {
     "bundle": "rm -rf dist && babel src --out-dir dist --ignore **/*.test.js",
     "bundle:watch": "babel src --out-dir dist --watch --ignore **/*.test.js",
