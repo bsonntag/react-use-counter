@@ -1,36 +1,30 @@
-import { fireEvent, render } from 'react-testing-library';
-import React from 'react';
+import { act, renderHook } from '@testing-library/react-hooks';
 import useCounter from '.';
 
-const Test = ({ initialCount }) => {
-  const [count, increment] = useCounter(initialCount);
-
-  return (
-    <button onClick={increment}>
-      {count}
-    </button>
-  );
-};
-
 test('should return zero as the initial state', () => {
-  const { container } = render(<Test />);
+  const { result } = renderHook(() => useCounter());
+  const [state] = result.current;
 
-  expect(container.firstChild.textContent).toBe('0');
+  expect(state).toBe(0);
 });
 
 test('should return specified initial state', () => {
-  const { container } = render(<Test initialCount={3} />);
+  const { result } = renderHook(() => useCounter(3));
+  const [state] = result.current;
 
-  expect(container.firstChild.textContent).toBe('3');
+  expect(state).toBe(3);
 });
 
 test('should update the state', () => {
-  const { container } = render(<Test />);
-  const button = container.firstChild;
+  const { result } = renderHook(() => useCounter(0));
 
-  expect(button.textContent).toBe('0');
+  act(() => {
+    const [, increment] = result.current;
 
-  fireEvent.click(button);
+    increment();
+  });
 
-  expect(button.textContent).toBe('1');
+  const [state] = result.current;
+
+  expect(state).toBe(1);
 });
