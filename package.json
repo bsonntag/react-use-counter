@@ -23,15 +23,11 @@
   },
   "jest": {
     "coverageDirectory": "coverage",
-    "coveragePathIgnorePatterns": [
-      "jest-setup.js"
-    ],
     "coverageReporters": [
       "html",
       "lcov",
       "text"
-    ],
-    "setupTestFrameworkScriptFile": "./jest-setup.js"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
