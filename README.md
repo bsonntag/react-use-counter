@@ -1,7 +1,6 @@
 # react-use-counter
 
 [![CircleCI](https://circleci.com/gh/bsonntag/react-use-counter.svg?style=svg)](https://circleci.com/gh/bsonntag/react-use-counter)
-[![Coverage Status](https://coveralls.io/repos/github/bsonntag/react-use-counter/badge.svg?branch=master)](https://coveralls.io/github/bsonntag/react-use-counter?branch=master)
 
 React hook for counter state.
 
